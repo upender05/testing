@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+
+<h2>Login Page</h2>
+
+<form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    
+    <button type="button" id="loginButton">Login</button>
+</form>
+
+<p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("loginForm");
+    const loginButton = document.getElementById("loginButton");
+    const forgotPasswordLink = document.getElementById("forgotPassword");
+    
+    loginButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        
+        // Simulating a basic login validation
+        if (username === "user" && password === "pass") {
+            alert("Login successful!");
+        } else {
+            alert("Login failed. Please check your username and password.");
+        }
+    });
+    
+    forgotPasswordLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        const username = prompt("Enter your username to reset your password:");
+        
+        if (username) {
+            alert(`An email with instructions to reset your password has been sent to ${username}`);
+        }
+    });
+});
+</script>
+
+</body>
+</html>

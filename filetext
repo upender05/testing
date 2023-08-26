@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login or Register</title>
+</head>
+<body>
+
+<h2>Login or Register</h2>
+
+<form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    
+    <button type="button" id="loginButton">Login</button>
+</form>
+
+<p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+
+<p>Don't have an account? <a href="#" id="registerLink">Register</a></p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("loginForm");
+    const loginButton = document.getElementById("loginButton");
+    const forgotPasswordLink = document.getElementById("forgotPassword");
+    const registerLink = document.getElementById("registerLink");
+    
+    loginButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        
+        // Simulating a basic login validation
+        if (username === "user" && password === "pass") {
+            alert("Login successful!");
+        } else {
+            alert("Login failed. Please check your username and password.");
+        }
+    });
+    
+    forgotPasswordLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        const username = prompt("Enter your username to reset your password:");
+        
+        if (username) {
+            alert(`An email with instructions to reset your password has been sent to ${username}`);
+        }
+    });
+    
+    registerLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        alert("Redirecting to registration page...");
+        // In a real application, this link would take the user to the registration page.
+    });
+});
+</script>
+
+</body>
+</html>
