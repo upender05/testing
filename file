@@ -7,9 +7,12 @@
 
 <h2>Login Page</h2>
 
+
+ksks
+
 <form id="loginForm">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username"><br><br>
+    <input fftype="text" id="username" name="username"><br><br>
     
     <label for="password">Password:</label>
     <input type="password" id="password" name="password"><br><br>
